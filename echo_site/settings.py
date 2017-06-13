@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'django.contrib.sites',
+    #'django.contrib.sitemaps',
     #crispy app
     'crispy_forms',
     'echo',
@@ -80,11 +82,11 @@ WSGI_APPLICATION = 'echo_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'echosite',
-		'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'jack_db',
+	    'USER': 'root',
+        'PASSWORD': '123456',
         'HOST': '127.0.0.1',
-        'PORT': '',
+        'PORT': '3306',
     }
 }
 

@@ -1,33 +1,24 @@
-# -*- coding: UTF-8 -*-
-"""echo_site URL Configuration
+# -*- coding:utf8 -*-
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.9/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib.sitemaps import GenericSitemap
+from django.contrib.sitemaps.views import sitemap
 import echo.views
 
 urlpatterns = [
+# the sitemap
+
     url(r'^admin/', admin.site.urls),
     url(r'^index/', echo.views.index,name= 'index'),
 
     #用户登陆列表
     #用户登陆
     url(r'login/', echo.views.login, name='login'),
+    #用户注册
+    #url(r'register/', echo.views.register, name='register'),
     #用户退出
     url(r'logout/', echo.views.logout, name='logout'),
     #密码修改

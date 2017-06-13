@@ -1,4 +1,6 @@
 # -*- coding: UTF-8 -*-
+from echo import forms
+from echo import models
 from .models import Node,Line,Device,Task,Process,Upload
 from forms import NodeForm,LineForm,DeviceForm,TaskForm, ProcessForm,UploadFileForm
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
@@ -7,7 +9,6 @@ from django.http import JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from upload import handle_uploaded_file
 import json
-
 from django.contrib.auth import views
 from django.contrib.auth.decorators import login_required
 
@@ -32,7 +33,7 @@ def index(request):
         task_complete_percent = 0
     #将相关参数传递给dashboard页面
     context = {
-        'page_title': '信息汇总',
+        'page_title': 'Map',  #信息汇总
         'node_number': node_number,
         'line_number': line_number,
         'device_number': device_number,
@@ -542,6 +543,11 @@ def login(request):
     #extra_context是一个字典，它将作为context传递给template，这里告诉template成功后跳转的页面将是/index
     template_response = views.login(request, extra_context={'next': '/index/'})
     return template_response
+
+#用户注册
+#def register(request):
+ #   template_response = views.logout_then_login(request, login_url='/login/')
+ #   return template_response
 
 #用户退出
 def logout(request):

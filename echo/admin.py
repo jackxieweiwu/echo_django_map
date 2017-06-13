@@ -31,8 +31,6 @@ class DeviceAdmin(admin.ModelAdmin):
         obj.device_signer = str(request.user)
         obj.save()
 
-
-
 admin.site.register(Node,NodeAdmin)
 admin.site.register(Line,LineAdmin)
 admin.site.register(Employee)

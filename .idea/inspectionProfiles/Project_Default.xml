@@ -1,0 +1,16 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="MySQLdb" />
+          <option value="labels_convert.*" />
+          <option value="AAAA.*" />
+          <option value="django.conf.urls.*" />
+          <option value="mysite4.urls.patterns" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
